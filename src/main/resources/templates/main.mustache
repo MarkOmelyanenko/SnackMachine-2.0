@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div style="width: 30%">
+    <h3>Add some new products!</h3>
+    <form method="post" style="display: block">
+        <div>
+            <div style="margin-bottom: 10px;">
+                <label for="name">Product name:</label>
+                <input type="text" name="name" placeholder="Product name" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="name">Product price:</label>
+                <input type="number" name="price" step="0.01" placeholder="Product price" required>
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="name">Product quantity:</label>
+                <input type="number" name="quantity" placeholder="Product quantity">
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label for="name">Purchase date:</label>
+                <input type="date" name="date" placeholder="Purchase date" required>
+            </div>
+            <button type="submit">Add</button>
+        </div>
+    </form>
+</div>
+
+<br>
+
+{{#products}}
+    <div>
+        <b>{{name}}</b>
+        <i>{{price}}</i>
+        <span>{{quantity}}</span>
+        <span>{{date}}</span>
+    </div>
+{{/products}}
+
+<div>
+    <h3>Purchased products sorted by date</h3>
+    <div>
+        <form method="post" action="filter">
+            <input type="date" name="filter">
+            <button type="submit">Sort</button>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
